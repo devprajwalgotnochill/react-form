@@ -1,15 +1,13 @@
 import "./App.css";
 import {useState} from "react";
 
-function App() {
+function App(){
+const [firstName , setFirstName] = useState("")
+const [lastName , setLastName] = useState("")
+const [email , setEmail] = useState("")
+const [err , setErr] = useState({});
 
-
-  const [firstName , setFirstName] = useState("")
-  const [lastName , setLastName] = useState("")
-  const [email , setEmail] = useState("")
-  const [err , setErr] = useState({});
-
-  const submitForm = ((e) =>{
+const submitForm = ((e) =>{
   e.preventDefault();
 
   // validateForm();
@@ -19,7 +17,7 @@ function App() {
     firstName,
     lastName,
     email
-
+  
   }
   console.log("Form summited:" , values)
 
@@ -29,39 +27,39 @@ function App() {
   return (
     <div>
       <div>
-        RECTFORM
+        REACTFORM
       </div>
       <div>
       <form action="">
         <div>
           <label htmlFor="firstName">FirstName:</label>
-          <input
+          <input 
           type="text" name="firstName" id="firstNames" placeholder="Enter your FirstName"
           value={firstName}
           onChange={(e) => setFirstName(e.target.value)}
           />
         </div>
-
+        
       </form>
       </div>
       <div>
       <form action="">
         <div>
           <label htmlFor="LastName">LastName:</label>
-          <input
+          <input 
           type="text" name="lastName" id="lastName" placeholder="Enter your LastName"
           value={lastName}
           onChange={(e) => setLastName(e.target.value)}
           />
         </div>
-
+        
       </form>
       </div>
       <div>
       <form action="">
         <div>
           <label htmlFor="firstName">Email:</label>
-          <input
+          <input 
           type="text" name="email" id="email" placeholder="Enter your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
@@ -72,7 +70,7 @@ function App() {
         </button>
 
 
-
+        
       </form>
 
       <footer>This is a footer</footer>
