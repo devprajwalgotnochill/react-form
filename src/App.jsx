@@ -5,7 +5,7 @@ function App(){
 const [firstName , setFirstName] = useState("")
 const [lastName , setLastName] = useState("")
 const [email , setEmail] = useState("")
-const [err , setErr] = useStates({});
+const [err , setErr] = useState({});
 
 const submitForm = ((e) =>{
   e.preventDefault();
@@ -56,15 +56,22 @@ const submitForm = ((e) =>{
       <div>
       <form action="">
         <div>
-          <label htmlFor="firstName">FirstName:</label>
+          <label htmlFor="firstName">Email:</label>
           <input 
-          type="text" name="firstName" id="firstNames" placeholder="Enter your Name"
+          type="text" name="email" id="email" placeholder="Enter your Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           />
         </div>
+        <button type='submit' onClick={submitForm}>
+          <h2>Submit</h2>
+        </button>
+
+
         
       </form>
+
+      <footer>This is a footer</footer>
       </div>
     </div>
     )
