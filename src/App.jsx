@@ -5,7 +5,22 @@ function App(){
 const [firstName , setFirstName] = useState("")
 const [lastName , setLastName] = useState("")
 const [email , setEmail] = useState("")
-const [err , setErr] = useState({});
+const [err , setErr] = useStates({});
+
+const submitForm = ((e) =>{
+  e.preventDefault();
+
+  // validateForm();
+  // this func will help us to validate the form and reject empty data
+
+  const values = {
+    firstName,
+    lastName,
+    email
+  
+  }
+  console.log("Form summited:" , values)
+})
 
   return (
     <div>
@@ -31,8 +46,8 @@ const [err , setErr] = useState({});
           <label htmlFor="LastName">LastName:</label>
           <input 
           type="text" name="lastName" id="lastName" placeholder="Enter your LastName"
-          value={firstName}
-          onChange={(e) => SetLastName(e.target.value)}
+          value={lastName}
+          onChange={(e) => setLastName(e.target.value)}
           />
         </div>
         
@@ -44,8 +59,8 @@ const [err , setErr] = useState({});
           <label htmlFor="firstName">FirstName:</label>
           <input 
           type="text" name="firstName" id="firstNames" placeholder="Enter your Name"
-          value={firstName}
-
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
           />
         </div>
         
