@@ -20,6 +20,8 @@ const submitForm = ((e) =>{
   
   }
   console.log("Form summited:" , values)
+
+  localStorage.setItem("formValues" , JSON.stringify(values))
 })
 
   return (
